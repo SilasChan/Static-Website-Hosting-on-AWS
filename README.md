@@ -7,21 +7,25 @@ This project includes hosting a static website using S3, implementing CloudFront
 ![image](diagram.png)
 
 ## Creating an IAM role
+
 1. Navigate to Access Management -> Roles -> Create Role
+
 ![image](1.png)
 
 2. Select AWS service as the trusted entity type and S3 as your use case. Click on Next.
+
 ![image](2.png)
 
 3. From the list of permission policies, choose the following policies:
 
-  AmazonS3FullAccess: To manage the S3 bucket.
+    *AmazonS3FullAccess*: To manage the S3 bucket.
 
-  CloudFrontFullAccess: To manage CloudFront distributions.
+    *CloudFrontFullAccess*: To manage CloudFront distributions.
 
-  AWSCertificateManagerReadOnly: To read SSL/TLS certificates.
+    *AWSCertificateManagerReadOnly: To read SSL/TLS certificates.
 
-  AmazonRoute53FullAccess (optional): To manage domain records.
+    *AmazonRoute53FullAccess* (optional): To manage domain records.
+
 
 4. Click on Next. Provide a suitable name and description for the IAM role and click on Create role.
 
@@ -31,6 +35,7 @@ This project includes hosting a static website using S3, implementing CloudFront
 ## Creating a S3 bucket
 
 1. From your AWS management console, search for S3 from the search bar.
+
 2. Click on Create bucket.
 
 ![image](4.png)
