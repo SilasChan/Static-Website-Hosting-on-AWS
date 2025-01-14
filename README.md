@@ -4,14 +4,14 @@
 This project includes hosting a static website using S3, implementing CloudFront for content delivery, using Route 53 for domain management (optional), and enabling HTTPS with ACM (optional). Additionally, it involves configuring an IAM role to manage access securely.
 
 ## Architecture Overview: 
-![image]()
+![image](diagram.png)
 
 ## Creating an IAM role
 1. Navigate to Access Management -> Roles -> Create Role
-![image]()
+![image](1.png)
 
 2. Select AWS service as the trusted entity type and S3 as your use case. Click on Next.
-![image]()
+![image](2.png)
 
 3. From the list of permission policies, choose the following policies:
 
@@ -25,7 +25,7 @@ This project includes hosting a static website using S3, implementing CloudFront
 
 4. Click on Next. Provide a suitable name and description for the IAM role and click on Create role.
 
-![image]()
+![image](3.png)
 
 
 ## Creating a S3 bucket
@@ -33,37 +33,37 @@ This project includes hosting a static website using S3, implementing CloudFront
 1. From your AWS management console, search for S3 from the search bar.
 2. Click on Create bucket.
 
-![image
+![image](4.png)
 
 3. Give a suitable name for the S3 bucket, keep the rest of the configurations as it is and click on Create bucket.
 
-![image]()
+![image](5.png)
 
 4. Upload website files: Open the bucket -> click Upload -> Upload your static files (e.g. index.html, styles.css).
 
-![image]()
+![image](6.png)
 
 5. Enable Static Website Hosting: Go to the Properties tab -> Static Website Hosting -> Enable it. Enter Index document: index.html and optionally Error document: error.html
 
-![image]()
+![image](7.png)
 
 6. Update the bucket policy and copy the Bucket ARN on it. Besides, it can restrict access to the IAM role if necessary.
 
-![image]()
+![image](8.png)
 
 7. Test the S3 bucket: Access the bucket’s Static Website Hosting Endpoint
 
-![image]()
+![image](9.png)
 
 ## Set Up CloudFront for Content Delivery
 
 1. From your AWS management console, search for CloudFront from the search bar.
 
-![image]()
+![image](10.png)
 
 2. Click Create Distribution. Typing your S3 static Website Endpoint URL (e.g., http://my-static-website.s3-website-us-east-1.amazonaws.com).
 
-![image]()
+![image](11.png)
 
 3. Origin Protocol Policy: Select HTTP Only since the S3 static website endpoint does not support HTTPS.
 
@@ -80,7 +80,7 @@ This project includes hosting a static website using S3, implementing CloudFront
 
 1. From your AWS management console, search for Route 53 from the search bar.
 
-![image]()
+![image](12.png)
 
 2. Register a Domain (if you don’t already have one): Search for your desired domain (e.g., example.com) and complete the purchase.
 
@@ -107,7 +107,7 @@ In Route 53, go to Hosted Zones → Click Create Hosted Zone. Enter your domain 
 
 From your AWS management console, search for Certificate Manager from the search bar.
 
-![image]()
+![image](13.png)
 
 2. Request a Public SSL Certificate: Open the ACM Console. Click Request a Certificate → Select Request a Public Certificate.
 
